@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { addAccount } from '../actions';
 
-class NewAccountForm extends Component {
+class EditAccountForm extends Component {
     
       constructor(props) {
         super(props);
@@ -48,7 +48,7 @@ class NewAccountForm extends Component {
       render() {
         return (
           <div className='myContainer'>
-            <div className='myContainer__title'>New Account</div>
+            <div className='myContainer__title'>EDIT THIS ACCOUNT FIX ME!!!!</div>
             <div className="subContainer">
               <form onSubmit={this.addAccount}>
                 <input
@@ -87,4 +87,4 @@ class NewAccountForm extends Component {
       };
     };
     
-    export default connect(mapStateToProps, { addAccount })(NewAccountForm);
+    export default connect(mapStateToProps, { addAccount })(EditAccountForm);

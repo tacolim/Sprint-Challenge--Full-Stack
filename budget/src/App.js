@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import { Route } from 'react-router-dom';
-import { Accounts, AccountDetail, NewAccountForm } from './components';
+import { Accounts, AccountDetail, NewAccountForm, EditAccountForm } from './components';
 
 const App = () => {
     return (
@@ -11,6 +11,7 @@ const App = () => {
         </header>
         <Route exact path='/' component={Accounts} />
         <Route exact path='/accounts/:id' component={AccountDetail} />
+        <Route exact path='/editAccountForm/:id' component={EditAccountForm} />
         <Route exact path='/newAccountForm' component={NewAccountForm} />
       </div>
     );

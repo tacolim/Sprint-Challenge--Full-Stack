@@ -8,17 +8,24 @@ class AccountDetail extends Component {
     this.props.getAccount(this.props.match.params.id);
   }
 
+
+
   render() {
-    const id = this.props.match.params.id;
+    console.log('acct detail props', this.props);
 
     if(!this.props.account) {
-      return <h2>Loading Account...</h2>
+      return <div className='myContainer__title'>Loading Account...</div>
     } else {
       return(
-        <div>
-          <h3>Details for {this.props.account.title}</h3>
-          <div></div>
-          <Link exact to='/'>Back to Accounts Main</Link>
+        <div className='myContainer'>
+          <div className='myContainer__title'>Details for Account: {this.props.account.name}</div>
+          <div className='subContainer'>
+            <div className='myContainer__contents'>Description: {this.props.account.description}</div>
+            <div className='myContainer__contents'>Monthly Allocation: {this.props.account.budgetedAmount}</div>
+            <div className='myContainer__contents'>Account Active: {String(this.props.account.isActive)}</div>
+            <Link className='buttonLinks' to={`/editAccountForm/${this.props.account._id}`}>Edit This Account</Link>
+          </div>
+          <Link className='buttonLinks' to='/'>Back to Accounts Main</Link>
         </div>
       )
     }
